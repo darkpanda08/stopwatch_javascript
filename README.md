@@ -1,2 +1,2 @@
 # Stopwatch
-A stopwatch using HTML, CSS and Javascript
+A stopwatch example made using HTML, CSS and Javascript.
