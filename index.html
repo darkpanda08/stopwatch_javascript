@@ -9,27 +9,27 @@
 </head>
 <body>
     <div class="container-fluid">
-        <div class="jumbotron pt-3">
-            <div class="name">
-                <h1 class="display-4 text-center">Stopwatch</h1>
-                <p class="lead text-center pt-2">Just an example</p>
-            </div>
-
-            <div class="stopwatch">
-                <h1 class="text-center display-1" id="counter">00:00:00</h1>
-            </div>
-
-            <div class="controls text-center pt-3">
-                <button class="btn btn-success" onclick="start()">Start</button>
-                <button class="btn btn-warning" onclick="pause()">Pause</button>
-                <button class="btn btn-danger" onclick="stop()">Stop</button>
-                <button class="btn btn-light" onclick="restart()">Restart</button>
-                <button class="btn btn-info" onclick="lap()">Lap</button>
-                <button class="btn btn-primary" onclick="resetLaps()">Reset Laps</button>
-            </div>
-            
-            <ul class="laps"></ul>
+        
+        <div class="name">
+            <h1 class="display-3 text-center">Stopwatch</h1>
+            <p class="lead text-center pt-2">Just an example</p>
         </div>
+
+        <div class="stopwatch">
+            <h1 class="text-center display-1" id="counter">00:00:00</h1>
+        </div>
+
+        <div class="controls text-center pt-3">
+            <button class="btn btn-success" onclick="start()">Start</button>
+            <button class="btn btn-warning" onclick="pause()">Pause</button>
+            <button class="btn btn-danger" onclick="stop()">Stop</button>
+            <button class="btn btn-light" onclick="restart()">Restart</button>
+            <button class="btn btn-info" onclick="lap()">Lap</button>
+            <button class="btn btn-primary" onclick="resetLaps()">Reset Laps</button>
+        </div>
+        
+        <ul class="laps"></ul>
+
     </div>
 
     <script src="script.js"></script>
