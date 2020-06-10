@@ -11,7 +11,7 @@ function start() {
 }
 
 function run() {
-    stopwatchDisp.innerText = getTimer();
+    stopwatchDisp.innerHTML = getTimer();
     ms++;
 
     if(ms == 100) {
@@ -38,7 +38,7 @@ function stop() {
     ms = 0;
     sec = 0;
     mins = 0;
-    stopwatchDisp.innerText = getTimer();
+    stopwatchDisp.innerHTML = getTimer();
 }
 
 function stopTimer() {
