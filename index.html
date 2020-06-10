@@ -3,9 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Stopwatch</title>
 </head>
 <body>
+    <div class="name">
+        <h1>Stopwatch</h1>
+    </div>
+    <div class="stopwatch">
+        00:00:00
+    </div>
     <div class="controls">
         <button onclick="start()">Start</button>
         <button onclick="pause()">Pause</button>
@@ -14,9 +21,8 @@
         <button onclick="lap()">Lap</button>
         <button onclick="resetLaps()">Reset Laps</button>
     </div>
-    <div class="stopwatch">
-        00:00:00
-    </div>
     <ul class="laps"></ul>
+
+    <script src="script.js"></script>
 </body>
 </html>
