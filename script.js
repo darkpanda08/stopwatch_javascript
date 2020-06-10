@@ -1,13 +1,18 @@
 var ms = 0, sec = 0, mins = 0;
 var timer;
+var paused;
 
 var stopwatchDisp = document.getElementById('counter');
 var lapsDisp = document.querySelector('.laps');
+var lapHeading = document.getElementById('lapHeading');
+
+lapHeading.style.display = "none";
 
 function start() {
     if(!timer) {
         timer = setInterval(run, 10);
     }
+    paused = false;
 }
 
 function run() {
@@ -31,10 +36,12 @@ function run() {
 
 function pause() {
     stopTimer();
+    paused = true;
 }
 
 function stop() {
     stopTimer();
+    paused = false;
     ms = 0;
     sec = 0;
     mins = 0;
@@ -58,10 +65,13 @@ function restart() {
 }
 
 function lap() {
-    if(timer) {
+    if(timer || paused) {
+        if (lapHeading.style.display === 'none') {
+            lapHeading.style.display = "block";
+        }
         var list = document.createElement('li');
         list.className += "list-group-item d-flex justify-content-between align-items-center";
-        list.innerText = getTimer();
+        list.innerHTML = getTimer();
         lapsDisp.appendChild(list);
     }
 }
