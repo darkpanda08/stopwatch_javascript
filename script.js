@@ -1,4 +1,4 @@
-var ms = 0, sec = 0, mins = 0;
+var ms = 0, sec = 0, mins = 0, i=0;
 var timer;
 var paused;
 
@@ -45,6 +45,7 @@ function stop() {
     ms = 0;
     sec = 0;
     mins = 0;
+    i = 0;
     stopwatchDisp.innerHTML = getTimer();
 }
 
@@ -69,13 +70,15 @@ function lap() {
         if (lapHeading.style.display === 'none') {
             lapHeading.style.display = "block";
         }
+        i++;
         var list = document.createElement('li');
         list.className += "list-group-item d-flex justify-content-between align-items-center";
-        list.innerHTML = getTimer();
+        list.innerHTML = i + ") " + getTimer();
         lapsDisp.appendChild(list);
     }
 }
 
 function resetLaps() {
     lapsDisp.innerHTML = '';
+    i = 0;
 }
