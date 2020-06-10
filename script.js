@@ -1,7 +1,7 @@
-var ms = 0, sec = 0, mins = 59;
+var ms = 0, sec = 0, mins = 0;
 var timer;
 
-var stopwatchDisp = document.querySelector('.stopwatch');
+var stopwatchDisp = document.getElementById('counter');
 var lapsDisp = document.querySelector('.laps');
 
 function start() {
@@ -11,7 +11,7 @@ function start() {
 }
 
 function run() {
-    stopwatchDisp.textContent = getTimer();
+    stopwatchDisp.innerText = getTimer();
     ms++;
 
     if(ms == 100) {
@@ -38,7 +38,7 @@ function stop() {
     ms = 0;
     sec = 0;
     mins = 0;
-    stopwatchDisp.textContent = getTimer();
+    stopwatchDisp.innerText = getTimer();
 }
 
 function stopTimer() {
@@ -59,12 +59,13 @@ function restart() {
 
 function lap() {
     if(timer) {
-        var li = document.createElement('li');
-        li.innerText = getTimer();
-        lapsDisp.appendChild(li);
+        var list = document.createElement('li');
+        list.className += "list-group-item d-flex justify-content-between align-items-center";
+        list.innerText = getTimer();
+        lapsDisp.appendChild(list);
     }
 }
 
 function resetLaps() {
-    lapsContainer.innerHTML = '';
+    lapsDisp.innerHTML = '';
 }
